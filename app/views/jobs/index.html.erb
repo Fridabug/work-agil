@@ -1,0 +1,33 @@
+<header id="header">
+  <div class="primary-feature">
+    <h1>AGILE AS US</h1>
+  </div>
+   <div class="secondary-feature">
+    <h2>Als Vertraute der Gottheit Inari, die selbst mitunter als Fuchs dargestellt wird, gelten Kitsune als Glücksbringer, die in Märchen und Legenden allerdings oft auch andere Seiten haben. </h2>
+  </div>
+  <div class="post-job">
+    <a href="#" id="post-job-btn">Post a job</a>
+  </div>
+</header>
+<div class="container">
+  <div class="list-container">
+    <ul>
+      <h2>Agile Jobs</h2>
+      <% @jobs.each do |job| %>
+        <a href="#">
+          <div class="job-card job-card-new">
+            <%= image_tag "sparkasse_img.png" %>
+            <%if job.new_jobs %>
+              <div class="job-card-info-infos job-card-new">
+            <% else %>
+              <div class="job-card-info-infos">
+            <% end %>
+              <p><%= job.company.name %></p>
+              <h3><%= job.title %></h3>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </ul>
+  </div>
+</div>
