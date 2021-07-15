@@ -1,11 +1,5 @@
-<div class="container">
-<%=  simple_form_for(:job) do |f|%>
- <%= f.input :title, as: :string, label: :Title %>
-  <%= f.input :company, as: :string %>
-  <%#= f.input :company_description, as: :text %>
-  <%= f.input :applying, as: :string %>
-  <%= f.input :category, as: :string %>
-  <%= f.input :description, as: :text, label: :Description %>
-<%= f.submit %>
-<% end %>
+<div class="main-background">
+  <div class="container content">
+    <%= render 'form' %>
+  </div>
 </div>

@@ -6,7 +6,7 @@
     <h2>Als Vertraute der Gottheit Inari, die selbst mitunter als Fuchs dargestellt wird, gelten Kitsune als Glücksbringer, die in Märchen und Legenden allerdings oft auch andere Seiten haben. </h2>
   </div>
   <div class="post-job">
-    <a href="#" id="post-job-btn">Post a job</a>
+    <%= link_to 'Post a job', new_job_path, id: "post-job-btn" %>
   </div>
 </header>
 <div class="container">
@@ -16,14 +16,17 @@
       <% @jobs.each do |job| %>
         <a href="#">
           <div class="job-card job-card-new">
-            <%= image_tag "sparkasse_img.png" %>
+            <%= image_tag job.company.logo, width: 40, height: 40, class: "avatar-small" %>
             <%if job.new_jobs %>
               <div class="job-card-info-infos job-card-new">
-            <% else %>
-              <div class="job-card-info-infos">
-            <% end %>
               <p><%= job.company.name %></p>
               <h3><%= job.title %></h3>
+
+            <% else %>
+              <div class="job-card-info-infos">
+              <p><%= job.company.name %></p>
+              <h3><%= job.title %></h3>
+              <% end %>
             </div>
           </div>
         </a>

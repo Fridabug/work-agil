@@ -30,6 +30,7 @@
 }
 
 .navbar-list {
+  text-align: center;
   margin: 0;
   padding: 0;
   line-height: 0.9em;
@@ -49,4 +50,10 @@
   .navbar-menu {
     width: 1375px !important;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-list #post-job-btn {
+      display: none;
+    }
 }
