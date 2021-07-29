@@ -11,7 +11,13 @@
       <%#= image %>
     </div>
     <div class="listing-container">
-      <div><%= @job.company.name %></div>
+      <h2><%= @job.company.name %></h2>
+    </div>
+    <p><%= @job.company.headquarters  %></p>
+    <a href="#">View website</a>
+    <p>Jobs Posted:<%= @job.company.jobs.length %></p>
+    <div class="apply-btn">
+      <a href="#" id="post-job-submit">Apply for this position</a>
     </div>
   </div>
   <div class="job" id="job-show">
@@ -21,7 +27,7 @@
     <div class="listing-tools">
       <a href="#">View all positions at <%= @job.company.name %></a>
       <%#= link_to "View all positions at #{@job.company}", company_jobs_path(@company) %>
-      <div>
+      <div class="apply-btn">
         <a href="#" id="post-job-submit">Apply for this position</a>
       </div>
     </div>

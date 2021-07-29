@@ -1,4 +1,74 @@
+.content-container {
+   margin-bottom: 5%;
+}
+
+.content {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 5%;
+}
+
+.listing-header p {
+  font-size: 0.8rem;
+  color: grey;
+  margin: 0 0 14px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 .company-card {
   float: right;
   padding: 28px 36px 0 36px;
+  background: #f8f9fa;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  word-break: break-word;
+  max-width: 300px;
+  text-align: center;
+
+  p {
+    font-size: 0.8rem;
+    color: grey;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  a {
+    font-size: 0.9rem;
+    word-break: keep-all;
+  }
 }
+
+.apply-btn {
+  margin: 20% 0 10% 0;
+}
+
+.listing-tag {
+  background-color: #dde0f4;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 6px 8px 2px 8px;
+  border-radius: 2px;
+  border: 1px solid #2736a3;
+  display: inline-block;
+}
+
+.job {
+  padding-top: 5%;
+}
+
+@media screen and (max-width: 600px) {
+  .company-card {
+    display: none;
+  }
+
+  .listing-header {
+  h1 {
+    font-size: 1.25rem;
+  }
+  }
+  .content-container {
+    width: 100%;
+  }
+}
+
+
