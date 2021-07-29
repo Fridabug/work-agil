@@ -1,0 +1,30 @@
+<div class="content">
+  <div class="listing-header">
+    <p><%= @job.created_at.strftime('Posted %b %d')  %></p>
+    <h1><%= @job.title  %></h1>
+    <span class="listing-tag"><%= @job.category %></span>
+    <span class="listing-tag"></span>
+    <span class="listing-tag"></span>
+  </div>
+  <div class="company-card">
+    <div class="company-logo">
+      <%#= image %>
+    </div>
+    <div class="listing-container">
+      <div><%= @job.company.name %></div>
+    </div>
+  </div>
+  <div class="job" id="job-show">
+    <div>
+      <%= @job.description  %>
+    </div>
+    <div class="listing-tools">
+      <a href="#">View all positions at <%= @job.company.name %></a>
+      <%#= link_to "View all positions at #{@job.company}", company_jobs_path(@company) %>
+      <div>
+        <a href="#" id="post-job-submit">Apply for this position</a>
+      </div>
+    </div>
+  </div>
+</div>
+

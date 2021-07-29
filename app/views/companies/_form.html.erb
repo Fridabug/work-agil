@@ -1,0 +1,8 @@
+<%=  simple_form_for @company do |f|%>
+  <%= f.input :name, label: 'Company Name' %>
+  <%= f.input :statement, label: 'Company Statement' %>
+  <%= f.input :url, label: "Company's Website URL" %>
+  <%= f.input :email, label: 'Email' %>
+  <%= f.input :description, as: :text, label: 'Company Description' %>
+  <%= f.button :submit, "Continue to Step 2", id: "post-job-submit" %>
+<% end %>

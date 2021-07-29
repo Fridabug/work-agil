@@ -34,7 +34,39 @@
   padding: 16px;
 }
 
+// .job-card-info-infos {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
 .job-card-new {
-  background-color: #F3DE8A;
+  background-color: rgba(243, 222, 138, 0.5);
 }
 
+.new-tag {
+  font-weight: bold;
+  background-color: #F3DE8A;
+  border-radius: 3px;
+  padding: 6px 8px 3px 8px;
+  float: right;
+  position: absolute;
+  margin-left: 85%!important;
+}
+
+.featured {
+  font-weight: bold;
+  float: right;
+  padding-top: 6px;
+  position: absolute;
+  margin-left: 70%!important;
+}
+
+@media screen and (max-width: 768px) {
+  .job-card {
+      margin: 0 -10% 2% -20%;
+      font-size: 0.5rem;
+    }
+    .new-tag {
+      display: none;
+    }
+}

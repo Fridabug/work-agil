@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to "/", class: "navbar-brand" do %>
       <%#= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
       <h3>Agile</h2>
     <% end %>
@@ -12,8 +12,8 @@
         <a href="#" class="navbar-btn flex-item">
           Companies
         </a>
-        <a href="#" class="navbar-btn flex-item" id="post-job-btn">
-          Post a Job
+
+        <%= link_to 'post a job', new_company_path, id: "post-job-btn" %>
         </a>
       </ul>
   </div>

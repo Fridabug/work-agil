@@ -5,21 +5,27 @@ class JobsController < ApplicationController
 
   def new
    @job = Job.new
-   # @job.build_company
    @company = Company.new
   end
 
   def create
     @job = Job.new(job_params)
-    @company = Company.new(company_params)
+    @company = Company.find(params[:company_id])
     @job.company = @company
     if @job.save
-      redirect_to job_path(@job)
+      redirect_to company_preview_path(@company, @job)
     else
-      render :new
+      render 'jobs/new'
     end
   end
 
+  def show
+    @job = Job.find(params[:id])
+  end
+
+  def preview
+    @job = Job.find(params[:id])
+  end
 
   private
 
@@ -27,7 +33,4 @@ class JobsController < ApplicationController
     params.require(:job).permit(:title, :category, :applying, :description, :company_id)
   end
 
-  def company_params
-    params.require(:company).permit(:name, :statement, :logo, :description, :email, :url)
-  end
 end

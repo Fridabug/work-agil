@@ -1,36 +1,49 @@
 <header id="header">
   <div class="primary-feature">
-    <h1>AGILE AS US</h1>
+    <h1>AGILE AS WE</h1>
   </div>
    <div class="secondary-feature">
     <h2>Als Vertraute der Gottheit Inari, die selbst mitunter als Fuchs dargestellt wird, gelten Kitsune als Glücksbringer, die in Märchen und Legenden allerdings oft auch andere Seiten haben. </h2>
   </div>
   <div class="post-job">
-    <%= link_to 'Post a job', new_job_path, id: "post-job-btn" %>
+    <%= link_to 'post a job', new_company_path, id: "post-job-btn" %>
   </div>
 </header>
-<div class="container">
-  <div class="list-container">
-    <ul>
-      <h2>Agile Jobs</h2>
-      <% @jobs.each do |job| %>
-        <a href="#">
-          <div class="job-card job-card-new">
-            <%= image_tag job.company.logo, width: 40, height: 40, class: "avatar-small" %>
-            <%if job.new_jobs %>
-              <div class="job-card-info-infos job-card-new">
-              <p><%= job.company.name %></p>
-              <h3><%= job.title %></h3>
+<div class="screen">
+  <div class="container">
+    <div class="list-container">
+      <ul>
+        <h2>Agile Jobs</h2>
+        <% @jobs.each do |job| %>
+          <%= link_to job_path(job) do %>
+              <%#= image_tag job.company.logo, width: 40, height: 40, class: "avatar-small" %>
+                <%if job.new_jobs %>
+                <div class="job-card job-card-new">
+                  <p class="new-tag">NEW</p>
+                  <div class="job-card-info-infos">
+                    <div>
+                      <p><%= job.company.name %></p>
+                      <h3><%= job.title %></h3>
+                    </div>
+                  </div>
+                  <%# if job.featured %>
+                  <p class="featured">Featured</p>
+                  <%# end %>
+                <% else %>
+                <div class="job-card">
+                  <div class="job-card-info-infos">
+                    <p><%= job.company.name %></p>
+                    <h3><%= job.title %></h3>
+                    <p><%= job.created_at.strftime('Posted %b %d') %></p>
+                  </div>
+                </div>
+                <% end %>
 
-            <% else %>
-              <div class="job-card-info-infos">
-              <p><%= job.company.name %></p>
-              <h3><%= job.title %></h3>
-              <% end %>
-            </div>
-          </div>
-        </a>
-      <% end %>
-    </ul>
+              </div>
+            </a>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

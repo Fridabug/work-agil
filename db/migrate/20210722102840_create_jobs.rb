@@ -4,8 +4,9 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :category
       t.string :applying
-      t.string :description
-      t.references :company, null: false, foreign_key: true
+      t.text :description
+      t.string :status, default: 'paused'
+      t.integer :company_id
 
       t.timestamps
     end
