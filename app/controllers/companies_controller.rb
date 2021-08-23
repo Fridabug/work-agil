@@ -10,14 +10,14 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
-    if @company.new?(params[:email])
+    if @company.exists?(params[:email])
       if @company.save
         redirect_to new_company_job_path(@company)
       else
         render 'companies/new'
       end
     else
-      @company = Company.where('email' == (params[:email]))
+      @company = Company.where((params[:email]) == 'email')
       redirect_to new_company_job_path(@company)
     end
   end
@@ -29,6 +29,7 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:name, :statement, :logo, :description, :email, :url, job_attributes: [:id, :title, :category, :applying, :description])
+    params.require(:company).permit(:name, :statement, :logo, :description, :email, :url,
+                                    job_attributes: %i[id title category applying description])
   end
 end
