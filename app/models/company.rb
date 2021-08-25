@@ -1,5 +1,6 @@
 class Company < ApplicationRecord
   has_many :jobs
+  has_one_attached :photo
   accepts_nested_attributes_for :jobs, reject_if: :all_blank
 
   def new?(email)

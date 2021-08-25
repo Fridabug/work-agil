@@ -1,4 +1,8 @@
 class CompaniesController < ApplicationController
+  def index
+    @companies = Company.all
+  end
+
   def show
     @company = Company.find(params[:id])
   end
@@ -10,16 +14,16 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
-    if @company.exists?(params[:email])
+    # if @company.exists?(params[:email])
       if @company.save
         redirect_to new_company_job_path(@company)
       else
         render 'companies/new'
       end
-    else
-      @company = Company.where((params[:email]) == 'email')
-      redirect_to new_company_job_path(@company)
-    end
+    # else
+    #   @company = Company.where((params[:email]) == 'email')
+    #   redirect_to new_company_job_path(@company)
+    # end
   end
 
   private
@@ -29,7 +33,7 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:name, :statement, :logo, :description, :email, :url,
+    params.require(:company).permit(:name, :statement, :photo, :description, :email, :url,
                                     job_attributes: %i[id title category applying description])
   end
 end

@@ -1,6 +1,7 @@
 <%=  simple_form_for @job, url: company_jobs_path do |j| %>
   <%= j.input :title, as: :string, label: 'Job Title' %>
-  <%= j.input :category, as: :radio_buttons, collection: ['half-time', 'full-time'] %>
+  <%= j.input :category, collection: ['coaching', 'design'] %>
+  <%= j.input :type, as: :radio_buttons, collection: ['contract', 'freelancer'] %>
   <%= j.input :applying, as: :string, label: 'How to Apply' %>
   <%= j.input :description, as: :text, label: 'Job Description' %>
   <%= j.button :submit, "Continue to Step 3", id: "post-job-submit" %>

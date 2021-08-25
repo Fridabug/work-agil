@@ -1,0 +1,24 @@
+<div class="screen">
+  <div class="container">
+    <div class="list-container">
+      <ul>
+        <h2>Companies</h2>
+        <div class="row">
+        <% @companies.each do |company| %>
+          <%= link_to company_path(company) do %>
+          <div class="col-X">
+            <% if company.photo.attached? %>
+              <%= cl_image_tag company.photo.key, height: 150, width: 200, crop: :fill %>
+              <h3><%= company.name %></h3>
+              <% else %>
+              <div class="no-logo"></div>
+              <h3><%= company.name %></h3>
+            <% end %>
+          </div>
+          <% end %>
+        <% end %>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

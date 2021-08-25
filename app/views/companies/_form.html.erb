@@ -1,5 +1,6 @@
 <%=  simple_form_for @company do |f|%>
   <%= f.input :name, label: 'Company Name' %>
+  <%= f.input :photo, as: :file, label: "Company's Logo" %>
   <%= f.input :statement, label: 'Company Statement' %>
   <%= f.input :url, label: "Company's Website URL" %>
   <%= f.input :email, label: 'Email' %>

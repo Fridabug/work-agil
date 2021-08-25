@@ -34,13 +34,13 @@ puts "creating companies..."
 
 # puts "Successfully created companies"
 
-sparkasse = Company.create(name: 'Sparkasse', statement: '', logo: 'https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80', url: '', email: 'sparkass@fuchs.com', description: '', headquarters: 'Berlin')
+sparkasse = Company.create(name: 'Sparkasse', statement: '', url: '', email: 'sparkass@fuchs.com', description: '', headquarters: 'Berlin')
 katzencafé = Company.create(name: 'Katzencafé', statement: '', logo: '', url: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1027&q=80', email: 'katzen@cafe.com', description: '', headquarters: 'Brrr')
 # {name: 'Santa', statement: '', logo: '', url: '', email: '', description: '', headquarters: ''}, {name: 'Breula', statement: '', logo: '', url: '', email: '', description: '', headquarters: ''}])
 puts "companies created"
 
 puts "creating jobs..."
-job_one = Job.create!(title: 'Head Of Finances', category: 'half-time', applying: '#', description: 'What we need and what you have:
+job_one = Job.create!(title: 'Head Of Finances', category: 'contract', applying: '#', description: 'What we need and what you have:
 Experience in delivering commercial apps using at least one of mainstream no-code platforms (Bubble, Glide, Adalo).
 Practical understanding of handling, storing, manipulating and transferring different types of data and the tools available to do this within the context of no-code/low code application builds (for example, Zapier, Airtable, Integromat).
 Working knowledge of the different platforms available to deliver no-code and low code solutions and the capability to evaluate the best tool for the job
@@ -48,7 +48,7 @@ Demonstrable experience of architecting real-world, practical solutions to techn
 A deep understanding of the limitations of both bespoke software development and delivering applications using no-code tools
 Whilst not essential, a basic understanding or some experience of software development, scripting (JavaScript), SQL and working with APIs and API documentation would be beneficial.
 Similarly, an understanding of UX concepts, evaluating user requirements and interpret user stories would be desirable. ', company_id: Company.first[:id])
-job_two = Job.create!(title: 'Schnurrmeisterin', category: 'full-time', applying: '#', description: 'We’re Looking for Someone With ⚡
+job_two = Job.create!(title: 'Schnurrmeisterin', category: 'freelancer', applying: '#', description: 'We’re Looking for Someone With ⚡
 * 3 years experience in software product management or veterinary workflows
 * Passion for solving customer problems
 * Ability and excitement to lead product changes with influence
@@ -63,7 +63,7 @@ job_two = Job.create!(title: 'Schnurrmeisterin', category: 'full-time', applying
 * Basic modern software tool experience: G Suite (Gmail, Google Drive, Google Sheets/Docs/Forms)
 * Knowledge of software development processes
 ', company_id: Company.last[:id])
-job_three = Job.create(title: 'Hairball Creator', category: 'half-time', applying: '#', description: 'You’ll need to:
+job_three = Job.create(title: 'Hairball Creator', category: 'contract', applying: '#', description: 'You’ll need to:
 Regularly ship real value to our users. You can both live two years ahead of your team and support them in the present moment as you shepherd your team’s work from discovery to ideation to release to follow-up. In particular, you’ll work hand-in-hand with a product designer on your team to jointly develop vision, prioritize, and execute on strategy.
 Understand the user journey, and not just the one in our apps, but the one in the real world as users resolve their financial struggles.
 Be comfortable with multiple discovery and ideation strategies in your quest to make YNAB consistently better. You enjoy talking to customers in user interviews and usability testing and have a knack for summarizing research in a concise way for teammates.
