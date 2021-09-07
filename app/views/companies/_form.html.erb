@@ -1,9 +1,23 @@
 <%=  simple_form_for @company do |f|%>
-  <%= f.input :name, label: 'Company Name' %>
-  <%= f.input :photo, as: :file, label: "Company's Logo" %>
-  <%= f.input :statement, label: 'Company Statement' %>
-  <%= f.input :url, label: "Company's Website URL" %>
-  <%= f.input :email, label: 'Email' %>
-  <%= f.input :description, as: :text, label: 'Company Description' %>
-  <%= f.button :submit, "Continue to Step 2", id: "post-job-submit" %>
+  <div class="form-partial">
+    <h3>First, tell us about the position</h3>
+    <%= f.simple_fields_for @job do |j|  %>
+      <%= j.input :title, as: :string, label: 'Job Title' %>
+      <%= j.input :category, collection: ['coaching', 'design'] %>
+      <%= j.input :type, as: :radio_buttons, collection: ['contract', 'freelancer'] %>
+      <%= j.input :applying, as: :string, label: 'How to Apply' %>
+      <%= j.input :description, as: :text, label: 'Job Description' %>
+    <% end %>
+  </div>
+  <div class="form-partial">
+    <h3>Tell Us More About Your Company</h3>
+    <p>Posted before? Just enter your email, all other info will be pulled in from your last position!</p>
+    <%= f.input :name, label: 'Company Name' %>
+    <%= f.input :photo, as: :file, label: "Company's Logo" %>
+    <%= f.input :statement, label: 'Company Statement' %>
+    <%= f.input :url, label: "Company's Website URL" %>
+    <%= f.input :email, label: 'Email' %>
+    <%= f.input :description, as: :text, label: 'Company Description' %>
+    <%= f.button :submit, "Submit Posting", id: "post-job-submit" %>
+  </div>
 <% end %>

@@ -22,12 +22,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  adapter: postgresql
-  encoding: utf8
-  database: project_development
-  pool: 5
-  username:
-  password:
+  <<: *default
+  database: _fuchs_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,14 +55,9 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-
-test: &TEST
-  adapter: postgresql
-  encoding: utf8
-  database: project_test
-  pool: 5
-  username:
-  password:
+test:
+  <<: *default
+  database: _fuchs_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -88,9 +79,7 @@ test: &TEST
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgresql
-  encoding: utf8
-  database: project_production
-  pool: 5
-  username:
-  password:
+  <<: *default
+  database: _fuchs_production
+  username: _fuchs
+  password: <%= ENV['_FUCHS_DATABASE_PASSWORD'] %>

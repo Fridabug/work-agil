@@ -9,17 +9,16 @@ class CompaniesController < ApplicationController
 
   def new
     @company = Company.new
-    @job = Job.new
+    @job = @company.jobs.build
   end
 
   def create
     @company = Company.new(company_params)
-    # if @company.exists?(params[:email])
-      if @company.save
-        redirect_to new_company_job_path(@company)
+    if @company.save
+        redirect_to preview_path(@job)
       else
         render 'companies/new'
-      end
+    end
     # else
     #   @company = Company.where((params[:email]) == 'email')
     #   redirect_to new_company_job_path(@company)
@@ -28,12 +27,7 @@ class CompaniesController < ApplicationController
 
   private
 
-  def job_params
-    params.permit(:title, :category, :applying, :description, :company_id)
-  end
-
   def company_params
-    params.require(:company).permit(:name, :statement, :photo, :description, :email, :url,
-                                    job_attributes: %i[id title category applying description])
+    params.require(:company).permit(:name, :statement, :photo, :description, :email, :url, jobs_attributes: [:id, :title, :category, :applying, :description, :company_id])
   end
 end

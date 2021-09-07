@@ -1,7 +1,7 @@
 class Company < ApplicationRecord
-  has_many :jobs
+  has_many :jobs, inverse_of: :company
   has_one_attached :photo
-  accepts_nested_attributes_for :jobs, reject_if: :all_blank
+  validates :email, presence: true
 
   def new?(email)
     @company = Company.new

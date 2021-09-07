@@ -1,26 +1,18 @@
-<%=  simple_form_for @job, url: company_jobs_path do |j| %>
-  <%= j.input :title, as: :string, label: 'Job Title' %>
-  <%= j.input :category, collection: ['coaching', 'design'] %>
-  <%= j.input :type, as: :radio_buttons, collection: ['contract', 'freelancer'] %>
-  <%= j.input :applying, as: :string, label: 'How to Apply' %>
-  <%= j.input :description, as: :text, label: 'Job Description' %>
-  <%= j.button :submit, "Continue to Step 3", id: "post-job-submit" %>
-<% end %>
 
-<%#=  simple_form_for @company do |f|%>
-  <%#= f.fields_for @job do |j| %>
-     <%#= j.input :title, as: :string, label: 'Job Title' %>
-    <%#= j.input :category, as: :radio_buttons, collection: ['half-time', 'full-time'] %>
-    <%#= j.input :applying, as: :string, label: 'How to Apply' %>
-    <%#= j.input :description, as: :text, label: 'Job Description' %>
-  <%# end %>
-  <%#= f.input :name, label: 'Company Name' %>
-  <%#= f.input :statement, label: 'Company Statement' %>
-  <%#= f.input :url, label: "Company's Website URL" %>
-  <%#= f.input :email, label: 'Email' %>
-  <%#= f.input :description, as: :text, label: 'Company Description' %>
-  <%#= f.button :submit, "Continue to Step 2", id: "post-job-submit" %>
-<%# end %>
+<%=  simple_form_for @company do |f|%>
+  <%= f.fields_for @job do |j| %>
+    <%= j.input :title, as: :string, label: 'Job Title' %>
+    <%= j.input :category, collection: ['coaching', 'design'] %>
+    <%= j.input :applying, as: :string, label: 'How to Apply' %>
+    <%= j.input :description, as: :text, label: 'Job Description' %>
+  <% end %>
+  <%= f.input :name, label: 'Company Name' %>
+  <%= f.input :statement, label: 'Company Statement' %>
+  <%= f.input :url, label: "Company's Website URL" %>
+  <%= f.input :email, label: 'Email' %>
+  <%= f.input :description, as: :text, label: 'Company Description' %>
+  <%= f.button :submit, "Continue to Step 2", id: "post-job-submit" %>
+<% end %>
 
 
 
