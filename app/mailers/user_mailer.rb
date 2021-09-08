@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from 'notification@agil.com'
+  default from: 'notification@agil.com'
 
   def pending_email
     @company = params[:company]
