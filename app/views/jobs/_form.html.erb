@@ -1,18 +1,14 @@
-
-<%=  simple_form_for @company do |f|%>
-  <%= f.fields_for @job do |j| %>
+<div class="form-partial">
+  <h3>First, tell us about the position</h3>
+  <%=  simple_form_for @job do |j|%>
     <%= j.input :title, as: :string, label: 'Job Title' %>
     <%= j.input :category, collection: ['coaching', 'design'] %>
+    <%= j.input :type, as: :radio_buttons, collection: ['contract', 'freelancer'] %>
     <%= j.input :applying, as: :string, label: 'How to Apply' %>
     <%= j.input :description, as: :text, label: 'Job Description' %>
+    <%= j.button :submit, "to preview", id: "post-job-submit" %>
   <% end %>
-  <%= f.input :name, label: 'Company Name' %>
-  <%= f.input :statement, label: 'Company Statement' %>
-  <%= f.input :url, label: "Company's Website URL" %>
-  <%= f.input :email, label: 'Email' %>
-  <%= f.input :description, as: :text, label: 'Company Description' %>
-  <%= f.button :submit, "Continue to Step 2", id: "post-job-submit" %>
-<% end %>
+</div>
 
 
 

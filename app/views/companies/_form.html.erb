@@ -1,12 +1,12 @@
 <%=  simple_form_for @company do |f|%>
   <div class="form-partial">
-    <h3>First, tell us about the position</h3>
-    <%= f.simple_fields_for @job do |j|  %>
-      <%= j.input :title, as: :string, label: 'Job Title' %>
-      <%= j.input :category, collection: ['coaching', 'design'] %>
-      <%= j.input :type, as: :radio_buttons, collection: ['contract', 'freelancer'] %>
-      <%= j.input :applying, as: :string, label: 'How to Apply' %>
-      <%= j.input :description, as: :text, label: 'Job Description' %>
+   <h3>First, tell us about the position</h3>
+    <%= f.simple_fields_for :jobs do |jobs|  %>
+      <%= jobs.input :title, as: :string, label: 'Job Title' %>
+      <%= jobs.input :category, collection: ['coaching', 'design'] %>
+      <%= jobs.input :type, as: :radio_buttons, collection: ['contract', 'freelancer'] %>
+      <%= jobs.input :applying, as: :string, label: 'How to Apply' %>
+      <%= jobs.input :description, as: :text, label: 'Job Description' %>
     <% end %>
   </div>
   <div class="form-partial">
@@ -18,6 +18,6 @@
     <%= f.input :url, label: "Company's Website URL" %>
     <%= f.input :email, label: 'Email' %>
     <%= f.input :description, as: :text, label: 'Company Description' %>
-    <%= f.button :submit, "Submit Posting", id: "post-job-submit" %>
+    <%= f.button :submit, "to step 2", id: "post-job-submit" %>
   </div>
 <% end %>

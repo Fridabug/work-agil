@@ -9,15 +9,15 @@ class CompaniesController < ApplicationController
 
   def new
     @company = Company.new
-    @job = @company.jobs.build
+    @company.jobs.build
   end
 
   def create
     @company = Company.new(company_params)
     if @company.save
-        redirect_to preview_path(@job)
+        redirect_to preview_job_path(@company.jobs.first)
       else
-        render 'companies/new'
+        render 'companies/new', notice: "Ups, there were an error. Please, try again."
     end
     # else
     #   @company = Company.where((params[:email]) == 'email')
@@ -28,6 +28,6 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:name, :statement, :photo, :description, :email, :url, jobs_attributes: [:id, :title, :category, :applying, :description, :company_id])
+    params.require(:company).permit(:name, :statement, :photo, :description, :email, :url, jobs_attributes: [:title, :category, :applying, :description])
   end
 end

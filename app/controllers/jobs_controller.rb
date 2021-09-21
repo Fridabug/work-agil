@@ -6,13 +6,15 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
-    @company = @job.build_company
+    @job.company = Company.find(params[:company_id])
   end
 
   def create
     @job = Job.new(job_params)
+    @company = Company.find(params[:company_id])
+    @job.company = @company
     if @job.save
-        redirect_to company_preview_path(@company, @job)
+        redirect_to company_preview_path(@job, @company)
       else
         render 'jobs/new', notice: "Ups, there were an error. Please, try again."
     end
@@ -30,7 +32,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :category, :applying, :description,
-      company_attributes: [:id, :name, :statement, :photo, :description, :email, :url])
+    params.require(:job).permit(:title, :category, :applying, :description)
   end
 end

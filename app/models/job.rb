@@ -1,8 +1,8 @@
 class Job < ApplicationRecord
-  belongs_to :company
+  belongs_to :company, optional: true
   accepts_nested_attributes_for :company
-  validates :title, presence: true
-  validates :category, presence: true, inclusion: { in: ['coaching', 'design'] }
+  # validates :title, presence: true
+  # validates :category, presence: true, inclusion: { in: ['coaching', 'design'] }
 
   default_scope { order(created_at: :desc) }
 
