@@ -1,8 +1,10 @@
 class Company < ApplicationRecord
   has_many :jobs, inverse_of: :company
   has_one_attached :photo
-  # validates :email, presence: true
+  validates :email, presence: true
+  validates :name, presence: true
   accepts_nested_attributes_for :jobs, reject_if: :all_blank
+  validates_associated :jobs
 
   # def jobs_attributes=(jobs_attributes)
   #   jobs_attributes.each do |i, job_attributes|

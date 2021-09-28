@@ -2,4 +2,18 @@
   h3 {
     color: $brand-red;
   }
+
+  .form-group {
+    font-weight: 900;
+  }
 }
+
+input:required:valid {
+  border-color: $green;
+}
+
+abbr {
+  display: none;
+}
+
+
