@@ -1,7 +1,10 @@
 .navbar {
   background: white;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  min-width: 720px;
+  margin: 0 auto;
+  padding: 0.5rem 0;
 }
 
 .navbar-brand img {
@@ -43,12 +46,13 @@
   margin: 20px 10px 20px 10px;
   transition: all 0.2s;
   color: black;
+  font-weight: 600;
 }
 
 
 @media screen and (min-width: 1176px) {
   .navbar-menu {
-    width: 1375px !important;
+    width: 100vh !important;
   }
 }
 
@@ -56,4 +60,14 @@
   .navbar-list #post-job-btn {
       display: none;
     }
+}
+
+
+.nav {
+  background-color: white;
+  padding: 70px 0 0 5%;
+  a {
+    color: $brand-red!important;
+    font-weight: 900;
+  }
 }

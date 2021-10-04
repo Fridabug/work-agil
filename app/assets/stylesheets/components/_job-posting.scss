@@ -3,7 +3,6 @@
 }
 
 .content {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   padding: 5%;
 }
@@ -43,12 +42,14 @@
 }
 
 .listing-tag {
+  color: $brand-blue;
+  text-transform: uppercase;
   background-color: #dde0f4;
   text-decoration: none;
   font-size: 0.8rem;
   padding: 6px 8px 2px 8px;
   border-radius: 2px;
-  border: 1px solid #2736a3;
+  border: 1px solid $brand-blue;
   display: inline-block;
 }
 
