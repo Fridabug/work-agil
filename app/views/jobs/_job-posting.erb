@@ -2,6 +2,7 @@
   <div class="listing-header">
     <p><%= @job.created_at.strftime('Posted %b %d')  %></p>
     <h1><%= @job.title  %></h1>
+    <h2><%= @job.company.name %></h2>
     <span class="listing-tag"><%= @job.category %></span>
     <span class="listing-tag"><%= @job.type %></span>
     <!-- <span class="listing-tag"></span> -->

@@ -2,14 +2,22 @@
   text-align: center;
 }
 
-#post-job-btn {
-  font-size: 1rem;
-  color: white;
+.post-job-btn {
   padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white !important;
   border-radius: 3px;
   background-color: #d62839;
-  font-weight: 700;
   border: none;
+}
+
+#red-btn {
+  color: white;
+  border-radius: 3px;
+  background-color: #d62839;
+  border: none;
+  padding: 0.5rem 1rem;
 }
 
 #post-job-btn:hover {
