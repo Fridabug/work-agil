@@ -61,6 +61,12 @@
   margin-left: 70%!important;
 }
 
+.job-listing-show {
+  width: 50%;
+  overflow: hidden;
+  float: left;
+}
+
 @media screen and (max-width: 768px) {
   .job-card {
       margin: 0 -10% 2% -20%;

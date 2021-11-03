@@ -8,12 +8,17 @@
   }
 }
 
-input:required:valid {
+.string {
+  label {
+    margin-bottom: 2%;
+  }
+}
+
+.required:valid {
   border-color: $green;
 }
 
 abbr {
   display: none;
 }
-
 

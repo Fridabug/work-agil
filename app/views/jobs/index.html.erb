@@ -16,7 +16,7 @@
         <h2>Agile Jobs</h2>
         <% @jobs.each do |job| %>
             <%= link_to job_path(job) do %>
-                <%#= image_tag job.company.logo, width: 40, height: 40, class: "avatar-small" %>
+                <%= image_tag job.company.logo, width: 40, height: 40, class: "avatar-small" %>
                   <%if job.new? %>
                   <div class="job-card job-card-new">
                     <p class="new-tag">NEW</p>

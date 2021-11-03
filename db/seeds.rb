@@ -15,7 +15,7 @@ Company.destroy_all
 
 puts "creating companies..."
 
-# company_url = "https://spreadsheets.google.com/feeds/cells/1Ziw9vqsNt-uL-h2EEiAljkoi5NYT-5GWjk_F2Rn5swM/1/public/full?alt=json"
+# company_url = "https://opensheet.vercel.app/1Ziw9vqsNt-uL-h2EEiAljkoi5NYT-5GWjk_F2Rn5swM/companies"
 # company_seed_url = open(company_url).read
 # company_seed_json = JSON.parse(company_seed_url)
 
@@ -47,7 +47,7 @@ Working knowledge of the different platforms available to deliver no-code and lo
 Demonstrable experience of architecting real-world, practical solutions to technical problems using no-code and low-code technologies.
 A deep understanding of the limitations of both bespoke software development and delivering applications using no-code tools
 Whilst not essential, a basic understanding or some experience of software development, scripting (JavaScript), SQL and working with APIs and API documentation would be beneficial.
-Similarly, an understanding of UX concepts, evaluating user requirements and interpret user stories would be desirable. ', company_id: Company.first[:id])
+Similarly, an understanding of UX concepts, evaluating user requirements and interpret user stories would be desirable. ', company_id: Company.first[:id], status: 'payed/featured')
 job_two = Job.create!(title: 'Schnurrmeisterin', category: 'design', applying: '#', description: 'We’re Looking for Someone With ⚡
 * 3 years experience in software product management or veterinary workflows
 * Passion for solving customer problems
@@ -62,6 +62,7 @@ job_two = Job.create!(title: 'Schnurrmeisterin', category: 'design', applying: '
 * Good written and verbal communication
 * Basic modern software tool experience: G Suite (Gmail, Google Drive, Google Sheets/Docs/Forms)
 * Knowledge of software development processes
+
 ', company_id: Company.last[:id])
 job_three = Job.create(title: 'Hairball Creator', category: 'design', applying: '#', description: 'You’ll need to:
 Regularly ship real value to our users. You can both live two years ahead of your team and support them in the present moment as you shepherd your team’s work from discovery to ideation to release to follow-up. In particular, you’ll work hand-in-hand with a product designer on your team to jointly develop vision, prioritize, and execute on strategy.

@@ -4,7 +4,7 @@
     <h1><%= @job.title  %></h1>
     <h2><%= @job.company.name %></h2>
     <span class="listing-tag"><%= @job.category %></span>
-    <span class="listing-tag"><%= @job.type %></span>
+    <span class="listing-tag"><%= @job.job_type %></span>
     <!-- <span class="listing-tag"></span> -->
   </div>
   <div class="company-card">
@@ -15,24 +15,26 @@
       <h2><%= @job.company.name %></h2>
     </div>
     <p><%= @job.company.headquarters  %></p>
+
     <a href="#">View website</a>
     <p>Jobs Posted:<%= @job.company.jobs.length %></p>
     <div class="apply-btn">
       <a href="#" id="post-job-submit">Apply for this position</a>
     </div>
+    <%= link_to "View all jobs ", company_jobs_path(@company) %>
   </div>
-  <div class="job" id="job-show">
-    <div class= "job-text">
-      <div class= ""></div>
-      <%= @job.description  %>
+  <section class="job" id="job-show">
+    <div class= "job-listing">
+      <div class= "job-listing-show">
+        <%= @job.description  %>
+      </div>
     </div>
     <div class="listing-tools">
-      <a href="#">View all positions at <%= @job.company.name %></a>
-      <%#= link_to "View all positions at #{@job.company}", company_jobs_path(@company) %>
+      <%= link_to "View all positions at #{@job.company.name}", company_jobs_path(@company) %>
       <div class="apply-btn">
         <a href="#" id="post-job-submit">Apply for this position</a>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 
