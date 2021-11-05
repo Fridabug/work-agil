@@ -39,7 +39,10 @@
   line-height: 0.9em;
   z-index: 1000;
   list-style: none;
+  display: flex;
+  float: right;
 }
+
 
 .navbar-btn {
   font-size: 0.85rem;
@@ -49,6 +52,19 @@
   font-weight: 600;
 }
 
+.dropdown-menu {
+  background: #fff;
+  border-radius: 3px;
+  padding: 20px;
+  min-width: 165px;
+}
+
+.dropdown-menu a {
+  line-height: 2rem;
+  font-weight: 400;
+  font-size: 0.8em;
+  color: rgb(77, 81, 84);
+}
 
 @media screen and (min-width: 1176px) {
   .navbar-menu {

@@ -47,7 +47,7 @@ Working knowledge of the different platforms available to deliver no-code and lo
 Demonstrable experience of architecting real-world, practical solutions to technical problems using no-code and low-code technologies.
 A deep understanding of the limitations of both bespoke software development and delivering applications using no-code tools
 Whilst not essential, a basic understanding or some experience of software development, scripting (JavaScript), SQL and working with APIs and API documentation would be beneficial.
-Similarly, an understanding of UX concepts, evaluating user requirements and interpret user stories would be desirable. ', company_id: Company.first[:id], status: 'payed/featured')
+Similarly, an understanding of UX concepts, evaluating user requirements and interpret user stories would be desirable. ', company_id: Company.first[:id], status: 'payed/featured', job_type: 'contract')
 job_two = Job.create!(title: 'Schnurrmeisterin', category: 'design', applying: '#', description: 'We’re Looking for Someone With ⚡
 * 3 years experience in software product management or veterinary workflows
 * Passion for solving customer problems
@@ -63,7 +63,7 @@ job_two = Job.create!(title: 'Schnurrmeisterin', category: 'design', applying: '
 * Basic modern software tool experience: G Suite (Gmail, Google Drive, Google Sheets/Docs/Forms)
 * Knowledge of software development processes
 
-', company_id: Company.last[:id])
+', company_id: Company.last[:id], status: "payed", job_type: 'freelancer')
 job_three = Job.create(title: 'Hairball Creator', category: 'design', applying: '#', description: 'You’ll need to:
 Regularly ship real value to our users. You can both live two years ahead of your team and support them in the present moment as you shepherd your team’s work from discovery to ideation to release to follow-up. In particular, you’ll work hand-in-hand with a product designer on your team to jointly develop vision, prioritize, and execute on strategy.
 Understand the user journey, and not just the one in our apps, but the one in the real world as users resolve their financial struggles.
@@ -77,5 +77,5 @@ Be intensely curious. Period.
 Oh, also, not to the exclusion of anything else, but you’re intensely curious about how people learn, what motivates them, how they change and develop habits, and how behavior inside a product might change behavior outside it.
 Be comfortable speaking the language of software development and product design. If you’re also comfortable diving into HTML and CSS (or even one of the programming languages in our development stack!), that’s a plus, but it’s not a requirement. Being conversant across all disciplines is key.
 Manage key partner relationships, from day-to-day communication to contract negotiation.
-“Bonus points” awarded if you already use and love YNAB', company_id: Company.last[:id])
+“Bonus points” awarded if you already use and love YNAB', company_id: Company.last[:id], status: "payed", job_type: 'contract')
 puts "jobs created"

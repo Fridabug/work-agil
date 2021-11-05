@@ -1,0 +1,15 @@
+<div class="content">
+  <div class="company-listing-header">
+    <div>
+      <div class="logo">
+        <% if @company.photo.attached? %>
+          <%= cl_image_tag company.photo.key, height: 150, width: 200, crop: :fill %>
+        <% end %>
+      </div>
+      <h1><%= @company.name %></h1>
+    </div>
+  </div>
+  <div>
+
+  </div>
+</div>

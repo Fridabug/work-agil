@@ -9,14 +9,15 @@
   </div>
   <div class="company-card">
     <div class="company-logo">
-      <%#= image %>
+        <% if @company.photo.attached? %>
+          <%= cl_image_tag company.photo.key, height: 150, width: 200, crop: :fill %>
+        <% end %>
     </div>
     <div class="listing-container">
-      <h2><%= @job.company.name %></h2>
+      <%= link_to "<h1>#{ @job.company.name }</h1>".html_safe, company_path(@company), {class: 'h2'}  %>
     </div>
     <p><%= @job.company.headquarters  %></p>
-
-    <a href="#">View website</a>
+    <a href=<% @job.company.url %>>View website</a>
     <p>Jobs Posted:<%= @job.company.jobs.length %></p>
     <div class="apply-btn">
       <a href="#" id="post-job-submit">Apply for this position</a>
@@ -30,7 +31,7 @@
       </div>
     </div>
     <div class="listing-tools">
-      <%= link_to "View all positions at #{@job.company.name}", company_jobs_path(@company) %>
+      <%#= link_to "View all positions at #{@job.company.name}", company_jobs_path(@company) %>
       <div class="apply-btn">
         <a href="#" id="post-job-submit">Apply for this position</a>
       </div>

@@ -16,7 +16,7 @@
 }
 .company-card {
   float: right;
-  padding: 28px 36px 0 36px;
+  padding: 28px 36px 15px 36px;
   background: #f8f9fa;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
@@ -35,6 +35,11 @@
     font-size: 0.9rem;
     word-break: keep-all;
   }
+}
+
+.no-logo {
+  width: 33%;
+  background-color: $brand-purple;
 }
 
 .apply-btn {
@@ -57,6 +62,11 @@
   padding-top: 5%;
 }
 
+.job-listing-show {
+  width: 50%;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 600px) {
   .company-card {
     display: none;
@@ -69,6 +79,9 @@
   }
   .content-container {
     width: 100%;
+  }
+  .job-listing-show {
+    width: 100%!important;
   }
 }
 

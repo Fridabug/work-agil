@@ -7,14 +7,19 @@
   <div class="section">
     <nav class="flex-container">
       <ul class="navbar-list">
-        <a href="#" class="navbar-btn flex-item">
-          Categories
-        </a>
-        <a href="#" class="navbar-btn flex-item">
-          Companies
-        </a>
-          <%= link_to 'post a job', new_company_path, class: "navbar-btn", id: "red-btn" %>
-        </a>
+        <li>
+          <div class="dropdown show">
+            <a href="#"class="navbar-btn flex-item dropdown-toggle" role="button" data-toggle="dropdown">Categories</a>
+            <span class="arrow"></span>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a href="#" class="dopdown-item">category #1</a>
+              <a href="#" class="dopdown-item">category #2</a>
+              <a href="#" class="dopdown-item">category #3</a>
+            </div>
+          </div>
+        </li>
+        <li><%= link_to 'Companies', companies_path,class: "navbar-btn flex-item" %></li>
+        <li><%= link_to 'post a job', new_company_path, class: "navbar-btn", id: "red-btn" %></li>
       </ul>
   </div>
 </div>
