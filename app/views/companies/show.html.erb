@@ -3,6 +3,32 @@
     <div class="nav">
      <%= link_to "← Back to all jobs", root_path %>
     </div>
-    <%= render 'company-posting' %>
+    <%#= render 'company-posting' %>
+
+    <div class="company-show">
+
+      <!-- Data card of the company -->
+      <div class="company-data">
+        <p><%= @company.headquarters  %></p>
+        <a href=<% @company.url %>>View website</a>
+
+      </div>
+
+      <div class="company-details">
+        <div class="company-details-head">
+          <div>
+            <h1><%= @company.name %></h1>
+            <p>Jobs Posted:<%= @company.jobs.length %></p>
+          </div>
+
+          <div class="company-socials">
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
   </div>
 </div>

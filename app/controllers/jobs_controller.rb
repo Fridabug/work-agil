@@ -15,6 +15,7 @@ class JobsController < ApplicationController
     @job.company = @company
     if @job.save
         redirect_to company_preview_path(@job, @company)
+        redirect_to send_mail_job_path
       else
         render 'jobs/new', notice: "Ups, there were an error. Please, try again."
     end
@@ -26,6 +27,17 @@ class JobsController < ApplicationController
   end
 
   def preview
+    @job = Job.find(params[:id])
+    @company = @job.company
+  end
+
+  def send_email
+    @job = Job.find(params[:id])
+    UserMailer.newMail(@job).deliver
+    redirect_to company_preview_path(@job, @company)
+  end
+
+  def purchase
     @job = Job.find(params[:id])
     @company = @job.company
   end

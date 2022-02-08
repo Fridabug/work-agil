@@ -67,6 +67,12 @@
   overflow: hidden;
 }
 
+.listing-container {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .company-card {
     display: none;

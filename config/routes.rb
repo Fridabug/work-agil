@@ -10,10 +10,13 @@ Rails.application.routes.draw do
   resources :jobs, only: [:show, :index] do
     member do
       get :preview
+      get :send_mail
+      get :purchase
     end
+
   end
 
-  get '/catogaries', to: 'jobs#catogaries'
+  get '/categories', to: 'jobs#categories'
   get 'new', to: 'companies#new'
   get '/imprint', to: 'pages#imprint'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
