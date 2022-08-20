@@ -3,7 +3,8 @@
    <h3>First, tell us about the position</h3>
     <%= f.simple_fields_for :jobs do |jobs|  %>
       <%= jobs.input :title, as: :string, label: 'Job Title', error: 'The job title is mandatory' %>
-      <%= jobs.input :category, collection: ['coaching', 'design'] %>
+      <%= jobs.input :category, collection: ['Design',
+  'Programming', 'Product (Owner)', 'Sales and Marketing', 'Scrum Master / Agile Coach', 'All Other']%>
       <%= jobs.input :job_type, as: :radio_buttons, collection: ['contract', 'freelancer'] %>
       <%= jobs.input :applying, as: :string, label: 'How to Apply' %>
       <%= jobs.input :description, as: :text, label: 'Job Description' %>

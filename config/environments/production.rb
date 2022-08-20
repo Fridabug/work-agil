@@ -1,6 +1,8 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "http://workagil.io" }
   # Settings specified here will take precedence over those in config/application.rb.
+  config.active_job.queue_adapter = :async
 
   # Code is not reloaded between requests.
   config.cache_classes = true

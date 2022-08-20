@@ -1,0 +1,28 @@
+A new posting on workagile.io by <%= @company.name %>
+
+Company Data
+
+  <%= @company.name %>
+
+  <%= @company.statement %>
+
+  <%= @company.url %>
+
+  <%= @company.email %>
+
+  <%= @company.description %>
+
+  <%= @company.headquarters %>
+
+Job Data
+
+  <%= @company.jobs.first.title %>
+
+
+  <%= @company.jobs.last.category %>
+
+  <%= @company.jobs.last.applying %>
+
+  <%= @company.jobs.last.description %>
+
+  <%= @company.jobs.last.job_type %>

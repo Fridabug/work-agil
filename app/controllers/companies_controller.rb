@@ -15,7 +15,9 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     if @company.save
-        redirect_to preview_job_path(@company.jobs.first)
+        # NewPostingMailer.notify_user(@company).deliver_now
+        # NewPostingMailer.pending_posting(@company).deliver_now
+        redirect_to job_path(@company.jobs.first[:id]), notice: "Thank you for posting. You'll receive the conformation via email."
       else
         render 'companies/new', notice: "Ups, there were an error. Please, try again."
     end

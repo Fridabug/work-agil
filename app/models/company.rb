@@ -5,6 +5,7 @@ class Company < ApplicationRecord
   validates :name, presence: true
   accepts_nested_attributes_for :jobs, reject_if: :all_blank
   validates_associated :jobs
+  after_create :send_emails
 
   # def jobs_attributes=(jobs_attributes)
   #   jobs_attributes.each do |i, job_attributes|
@@ -16,5 +17,10 @@ class Company < ApplicationRecord
     @company = Company.new
     [] << Company.all.find_index { |c| c.email == email }
     [].size <= 1
+  end
+
+  def send_emails
+    NewPostingMailer.with(company: self).notify_user.deliver_now
+    NewPostingMailer.with(company: self).pending_posting.deliver_now
   end
 end

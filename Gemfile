@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 #image hosting
 gem 'cloudinary', '~> 1.16.0'
 
+
+gem 'letter_opener', group: :development
+
 gem 'devise'
 
 gem 'autoprefixer-rails', '10.2.5'

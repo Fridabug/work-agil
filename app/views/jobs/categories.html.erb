@@ -1,20 +1,9 @@
-<header id="header">
-  <div class="primary-feature">
-    <h1><%=  %></h1>
-  </div>
-   <div class="secondary-feature">
-    <h2>Als Vertraute der Gottheit Inari, die selbst mitunter als Fuchs dargestellt wird, gelten Kitsune als Glücksbringer, die in Märchen und Legenden allerdings oft auch andere Seiten haben. </h2>
-  </div>
-  <div class="post-job">
-    <%= link_to 'post a job', new_path, class: "post-job-btn" %>
-  </div>
-</header>
 <div class="screen">
   <div class="container">
     <div class="list-container">
       <ul>
-        <h2>Agile Jobs</h2>
-        <% if @job.category ==  %>
+        <h2>Agile <%= @job.category %> Jobs</h2>
+        <% if @job.category == @job %>
           <% @jobs.each do |job| %>
             <%= link_to job_path(job) do %>
                 <% if job.company.photo.attached? %>

@@ -1,0 +1,52 @@
+<h1>A new posting on workagile.io by <%= @company.name %></h1>
+
+<h2>Company Data</h2>
+<p>
+   name: <%= @company.name %>
+</p>
+<br>
+ <p>
+  stament: <%= @company.statement %>
+</p>
+<br>
+ <p>
+   url: <%= @company.url %>
+</p>
+<br>
+ <p>
+  email: <%= @company.email %>
+</p>
+<br>
+ <p>
+  description: <%= @company.description %>
+</p>
+<br>
+ <p>
+  headquarters: <%= @company.headquarters %>
+</p>
+<br>
+
+<h2>Job Data</h2>
+
+<p>
+  tile: <%= @company.jobs.first.title %>
+</p>
+<br>
+<p>
+  category: <%= @company.jobs.last.category %>
+</p>
+<br>
+ <p>
+  applying: <%= @company.jobs.last.applying %>
+</p>
+<br>
+<p>
+  description: <%= @company.jobs.last.description %>
+</p>
+<br>
+ <p>
+  job_type: <%= @company.jobs.last.job_type %>
+</p>
+<br>
+
+<%=  %>
