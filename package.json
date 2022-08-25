@@ -10,6 +10,7 @@
     "abyme": "^0.3.1",
     "bootstrap": "4.6",
     "jquery": "^3.6.0",
+    "node": "^16.17.0",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
   },
@@ -19,6 +20,6 @@
   },
   "engines": {
     "node": "14.x",
-    "ruby": "8.x"
+    "ruby": "2.6.6"
   }
 }

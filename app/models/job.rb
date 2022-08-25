@@ -4,7 +4,7 @@ class Job < ApplicationRecord
   validates :title, presence: true
   validates :category, presence: true, inclusion: { in: ['Design',
   'Programming', 'Product (Owner)', 'Sales and Marketing', 'Scrum Master / Agile Coach', 'All Other'] }
-  # after_create :send_email
+  has_rich_text :description
 
   default_scope { order(created_at: :desc) }
 

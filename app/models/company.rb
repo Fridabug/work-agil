@@ -6,6 +6,8 @@ class Company < ApplicationRecord
   accepts_nested_attributes_for :jobs, reject_if: :all_blank
   validates_associated :jobs
   after_create :send_emails
+  has_rich_text :description, :statement
+
 
   # def jobs_attributes=(jobs_attributes)
   #   jobs_attributes.each do |i, job_attributes|
